@@ -22,3 +22,8 @@ The homepage, three brand landing pages, navigation, photography, FAQs, and acce
 
 ## Updating copy
 Edit the corresponding index.html file; shared appearance is in style.css and accessibility controls are in app.js. Keep folder names intact so links continue to work.
+
+## Connected booking preview update
+New page: getaways/property-preview.html. The Getaways landing page links to it; the shared Find a stay button now stays within this site. The property page includes a gallery, example home details and a Hostfully-style booking panel. Dates and the availability button are intentionally disabled until real widget code is supplied. No rates, calendar data or booking requests are fabricated. The live Hostfully rental site remains available via an external link.
+All external HTTP/HTTPS links open in a new tab with noopener and noreferrer; internal navigation stays in the same tab. Browsers may open these as tabs or windows according to visitor settings.
+To update your GitHub site, upload the full contents of this updated package into the same publishing folder, replacing matching files and retaining the folders. Keep existing GitHub deployment settings.
