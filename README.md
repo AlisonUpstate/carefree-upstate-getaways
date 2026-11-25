@@ -1,29 +1,23 @@
-# Carefree Upstate Getaways - Website Review
+# Carefree Upstate Getaways - Hostfully Widget Update
 
-Four connected pages with the supplied company logo:
-- index.html: company homepage
-- hosting/index.html: Carefree Hosting
-- cleaning/index.html: Carefree Cleans
-- getaways/index.html: Upstate Getaways
+## Upload
+Unzip this download and upload its contents to the same GitHub publishing folder used for your dev site. Replace matching files and preserve all folders. index.html stays at the top level. No build or installation step is needed. Existing GitHub Pages settings remain unchanged.
 
-## Upload to your GitHub dev site
-1. Make a backup of your current dev site or use a separate review branch/repository.
-2. Unzip this download on your computer.
-3. Upload the CONTENTS of this folder into the folder your existing deployment publishes. For GitHub Pages this is often the repository root or /docs. Keep hosting, cleaning, getaways and assets as folders.
-4. Ensure index.html is directly inside that publishing folder, rather than inside an extra Carefree_Website_Review folder.
-5. Commit the upload. If using GitHub Pages with branch deployment, check Settings > Pages and select the intended branch and publishing folder. If your repo already uses an Actions, Vercel or Cloudflare deployment, preserve its existing setup.
-6. Wait for deployment to finish, open the dev URL and test the three navigation links and the logo's link back to home.
-7. Share the deployed homepage URL with the owners. They can move between all four pages using the top navigation.
+## Included
+Homepage, Hosting, Cleaning, Getaways, and getaways/plan-your-stay.html. The previous getaways/property-preview.html URL remains supported. Getaways now leads to the embedded Hostfully widget rather than disabled sample inputs.
 
-No installation or build step is required for these static files. Relative links support both domain-root hosting and GitHub Pages repository subfolders. The original logo file is included without image edits.
+## Hostfully configuration
+The supplied widget uses type: agency with identifier 3f3fcbe1-67b1-4d1e-9f9c-515140c7ce6e. It has been integrated as a general Plan your stay page, not represented as a booking widget for a particular sample home. The provided hostfully configuration is in hostfully-booking.js; branding colors were adjusted to navy and gold. Property-specific pages require matching property widget codes and verified property details.
 
-## What this review includes
-The homepage, three brand landing pages, navigation, photography, FAQs, and accessibility controls. Booking buttons link to the existing Hostfully site; cleaning inquiries link to the supplied Facebook page; the owner guide remains an external link. Embedded Hostfully widgets, booking forms and custom inquiry forms are not connected in this concept.
+The supplied customDomainName is https://owner.upstategetaways.rentals/ and is preserved unchanged. Confirm this is the intended booking domain in Hostfully. Credit card capture is false in the supplied configuration. Full checkout behavior must be tested; do not assume this widget alone takes payment.
 
-## Updating copy
-Edit the corresponding index.html file; shared appearance is in style.css and accessibility controls are in app.js. Keep folder names intact so links continue to work.
+## External links
+External HTTP/HTTPS anchors open separately with target=_blank and rel=noopener noreferrer. Internal navigation stays in this site. Dynamic external anchors inserted into this document receive the same handling. Browser settings decide whether a new tab or window opens. Links or checkout navigation inside a third-party iframe are controlled by Hostfully and need separate verification.
 
-## Connected booking preview update
-New page: getaways/property-preview.html. The Getaways landing page links to it; the shared Find a stay button now stays within this site. The property page includes a gallery, example home details and a Hostfully-style booking panel. Dates and the availability button are intentionally disabled until real widget code is supplied. No rates, calendar data or booking requests are fabricated. The live Hostfully rental site remains available via an external link.
-All external HTTP/HTTPS links open in a new tab with noopener and noreferrer; internal navigation stays in the same tab. Browsers may open these as tabs or windows according to visitor settings.
-To update your GitHub site, upload the full contents of this updated package into the same publishing folder, replacing matching files and retaining the folders. Keep existing GitHub deployment settings.
+## Verification before sharing
+Open the deployed site, choose Getaways > Plan your stay, and confirm that the real widget loads. Select dates and guest count. Verify rates, any property selection, minimum stays, discounts and inquiry/checkout behavior for your account. Do not submit a paid or real test reservation unintentionally. Confirm any required domain allowlisting with Hostfully support if the widget fails to load. A fallback link to current live rentals remains available.
+
+Automated checks validate local assets, navigation, external link targets and JavaScript syntax. Live Hostfully behavior is not yet verified: the script download in the build environment was denied with HTTP 403. Test on your deployed GitHub dev site.
+
+## Editing
+Each page has its own HTML file. style.css is shared styling, app.js contains accessibility/external-link behavior, and hostfully-booking.js initializes the supplied widget. Keep the folder structure intact.
